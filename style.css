@@ -1,0 +1,14 @@
+:root{--primary:#0d6efd; --bg:#f8f9fa;}
+body{font-family:'Noto Nastaliq Urdu', Arial; background:var(--bg); margin:0; padding:10px; direction:rtl;}
+.container{max-width:900px; margin:auto; background:white; padding:15px; border-radius:10px; box-shadow:0 2px 5px #ccc;}
+header{display:flex; justify-content:space-between; align-items:center;}
+nav{display:flex; gap:10px; margin:15px 0; flex-wrap:wrap;}
+.tabBtn{padding:10px; border:none; background:#eee; border-radius:5px; cursor:pointer;}
+.tabBtn.active{background:var(--primary); color:white;}
+.tab{display:none;}.tab.active{display:block;}
+input,textarea{width:100%; padding:8px; margin:5px 0; border:1px solid #ccc; border-radius:5px;}
+button{background:var(--primary); color:white; border:none; padding:10px 15px; border-radius:5px; cursor:pointer; margin:5px 0;}
+.cards{display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:10px;}
+.card{background:#e9f0ff; padding:15px; border-radius:8px; text-align:center;}
+.hidden{display:none}
+@media print{nav,header button{display:none}}

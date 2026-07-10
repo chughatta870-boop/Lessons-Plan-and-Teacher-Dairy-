@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0d6efd">
+<title>GHS Lesson Planner + Teacher Diary</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons-192.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>📘 GHS Lesson Planner</h1>
+    <button id="installBtn" class="hidden">Install App</button>
+  </header>
+
+  <nav>
+    <button class="tabBtn active" data-tab="teacher">Teacher Mode</button>
+    <button class="tabBtn" data-tab="head">Head Teacher Mode</button>
+    <button class="tabBtn" data-tab="dashboard">Dashboard</button>
+  </nav>
+
+  <!-- TEACHER MODE -->
+  <section id="teacher" class="tab active">
+    <h2>Teacher Login</h2>
+    <input type="text" id="teacherName" placeholder="Teacher Name">
+    <input type="text" id="subject" placeholder="Subject">
+    <input type="text" id="class" placeholder="Class">
+    <input type="text" id="section" placeholder="Section">
+
+    <h3>Lesson Plan</h3>
+    <input type="date" id="date">
+    <input type="text" id="period" placeholder="Period No">
+    <input type="text" id="topic" placeholder="Topic">
+    <textarea id="outcome" placeholder="Learning Outcomes"></textarea>
+    <textarea id="method" placeholder="Teaching Method"></textarea>
+    <textarea id="aids" placeholder="Teaching Aids"></textarea>
+    <textarea id="assessment" placeholder="Assessment"></textarea>
+    <textarea id="homework" placeholder="Homework"></textarea>
+
+    <button id="aiBtn">✨ AI Auto Generate Plan</button>
+    <button id="saveBtn">Save Plan</button>
+    <input type="text" id="search" placeholder="Search Topic...">
+    <div id="lessonList"></div>
+  </section>
+
+  <!-- HEAD TEACHER MODE -->
+  <section id="head" class="tab">
+    <h2>Head Teacher Dashboard</h2>
+    <input type="text" id="searchTeacher" placeholder="Search Teacher">
+    <input type="date" id="filterDate">
+    <div id="allPlans"></div>
+  </section>
+
+  <!-- DASHBOARD -->
+  <section id="dashboard" class="tab">
+    <h2>School Dashboard</h2>
+    <div class="cards">
+      <div class="card">Total Teachers: <span id="totalTeachers">0</span></div>
+      <div class="card">Today's Plans: <span id="todayPlans">0</span></div>
+      <div class="card">Pending: <span id="pending">0</span></div>
+      <div class="card">Avg Score: <span id="avgScore">0</span>/45</div>
+    </div>
+  </section>
+</div>
+
+<script src="script.js"></script>
+<script>
+// PWA Register
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.register('sw.js');
+}
+</script>
+</body>
+</html>
